@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="bref" class="com.reference.StudentB">
+		<property name="bName" value="B" />
+		<property name="bCity" value="Bamgalore" />
+	</bean>
+
+	<!-- <bean class="com.reference.StudentA" name="aref"> <property name="aRoll" 
+		value="1" /> <property name="aName" value="A" /> <property name="ob"> <ref 
+		bean="bref" /> </property> </bean> ! -->
+
+	<!-- <bean name="aref" class="com.reference.StudentA"> <property name="aName" 
+		value="A"></property> <property name="ob" ref="bref"></property> </bean> 
+		! -->
+	<bean class="com.reference.StudentA" name="aref" p:aName="A"
+		p:ob-ref="bref" />
+
+</beans>
